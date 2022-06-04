@@ -1,0 +1,13 @@
+services:
+  app:
+    build:
+      context: ./docker/php/
+      args:
+        - USER_ID
+        - GROUP_ID
+    working_dir: /var/www/
+    container_name: app
+    volumes: 
+      - ./:/var/www/
+    ports:
+      - 8000:8000
